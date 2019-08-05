@@ -1,0 +1,93 @@
+<ion-header  >
+  <ion-toolbar>
+    <ion-title>
+      ACCENTURE TEST
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content >
+
+  <ion-item>
+      <ion-icon name="browsers"></ion-icon>
+      <h4><strong> HU01-REGISTRO DE CLIENTE DEL BANCO </strong> </h4>
+  </ion-item>
+  <ion-text color="medium">
+    <p style="color:#C1DBB3">
+    <strong>  En lista <u>Done</u>    <br><br>
+      Descripci&oacute;n <u>Editar</u>    <br><br> </strong>
+
+    </p>
+  </ion-text>
+
+  <ion-text color="dark">
+    <p>
+        Yo como persona natural deseo registrarme como cliente del banco e ingresar
+        mi informaci&oacute;n personal  para posteriormente solicitar  un crédito 
+        con la entidad.
+    </p>
+  </ion-text>
+ 
+
+
+
+<ion-item>
+    <ion-icon name="checkbox-outline"></ion-icon>
+    <h3 style="text-align: left"> <b> Criterios de aceptaci&oacute;n </b> </h3>
+    <ion-button slot="end" style="color:#FE5D26" fill="clear" (click)="restart()">Eliminar...</ion-button>
+</ion-item>
+  
+<ion-item>
+    <h4 style="color: #FE5D26">{{progress_bar}}%</h4>
+    <ion-progress-bar value="{{progress_bar/100}}"></ion-progress-bar>
+
+</ion-item>
+
+<ion-item [ngSwitch] = "progress_bar">
+
+  <ion-input *ngSwitchCase="0" type="number" 
+  placeholder = "Ingresa tu numero de identificaci&oacute;n"
+  [(ngModel)]="data_form.identification" ></ion-input>
+
+
+  
+
+  <ion-input *ngSwitchCase="40" type="text" 
+  placeholder = "Ingresa tu nombre"
+  [(ngModel)]="data_form.firstname"></ion-input>
+
+
+  <ion-input *ngSwitchCase="40" type="text" 
+  placeholder = "Ingresa tu apellido"
+  [(ngModel)]="data_form.lastname"></ion-input>
+
+  <ion-datetime *ngSwitchCase="80" displayFormat="DD-MM-YYYY"
+   placeholder="Ingresa tu fecha de nacimiento"
+   [(ngModel)]="data_form.birthdate"></ion-datetime>
+
+
+  
+</ion-item>
+
+<div  [ngSwitch] = "progress_bar">
+  <ion-button  *ngSwitchCase="0" disabled="{{!data_form.identification}}" 
+   class="boton-color"  expand="full" (click)="identification()"> Continuar</ion-button>
+
+   <ion-button  *ngSwitchCase="40" [disabled]="!data_form.firstname || !data_form.lastname" 
+   class="boton-color"  expand="full" (click)="identification()"> Continuar</ion-button>
+
+   <ion-button  *ngSwitchCase="80" disabled="{{!data_form.birthdate}}" 
+   class="boton-color"  expand="full" (click)="birthdate()"> Continuar</ion-button>
+
+</div>
+
+
+  <ion-text *ngIf="completo" color="secondary"  >
+      <h2 style="text-align:center"> Completado</h2>
+     
+  </ion-text>
+
+
+
+</ion-content>
+

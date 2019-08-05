@@ -1,0 +1,7 @@
+{
+  "name": "accenture",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

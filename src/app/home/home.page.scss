@@ -1,0 +1,44 @@
+ion-header{
+    --ion-background-color: #FE5D26 !important;
+}
+
+ion-content{
+     --ion-background-color:#FAEDCA!important;
+
+}
+
+ion-progress-bar{
+    --progress-background:#FE5D26!important;
+}
+
+.boton-color{
+    --background: #FE5D26;
+    --background-hover:#C1DBB3;
+    --background-focused:#C1DBB3;
+    
+}
+
+ion-icon {
+    font-size: 35px;
+  }
+
+ p{
+     color: #7EBC89;
+ } 
+ h4,h3{
+     color:#7EBC89;
+ }
+
+ ion-title{
+     --color:#FAEDCA;
+ }
+
+ ion-button{
+     --color:#FAEDCA;
+ }
+
+ ion-input{
+     --color:#7EBC89;
+     --placeholder-color:#7EBC89;
+ }
+
